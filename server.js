@@ -4,6 +4,10 @@ import path from 'path';
 import { Server } from 'socket.io';
 import { Chess } from 'chess.js';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const PORT = process.env.PORT || 3000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -101,6 +105,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(3000, () => {
-  console.log('Server running on port 3000');
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
