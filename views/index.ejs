@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiplayer Chess</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+
+<h1>♟ Multiplayer Chess</h1>
+<p id="status">Connecting...</p>
+
+<div id="players">
+  <span id="whitePlayer">White: —</span>
+  <span id="blackPlayer">Black: —</span>
+</div>
+
+<div class="game-container">
+  <div id="board"></div>
+
+  <div class="history-section">
+    <h3>Move History</h3>
+    <ol id="moveList"></ol>
+  </div>
+</div>
+
+<div id="joinModal" class="modal">
+  <div class="modal-card">
+    <h2>Join Game</h2>
+    <input id="roomInput" placeholder="Room ID">
+    <input id="nameInput" placeholder="Your Name">
+    <button id="joinBtn">Join</button>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/public/chess.js"></script>
+
+</body>
+</html>
